@@ -1,6 +1,9 @@
-import org.testng.annotations.Test;
+//import org.testng.annotations.Test;
+
+import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 
 public class ClassSectionTester {
 
@@ -249,7 +252,7 @@ public class ClassSectionTester {
         cs.addStudent(student1);
         student2.setId(1);
         cs.addStudent(student2);
-        assertEquals("Make sure that students with conflicting ids cannot be added to a class section!", cs.getStudents().contains(student2), false);
+        assertFalse("Make sure that students with conflicting ids cannot be added to a class section!", cs.getStudents().contains(student2));
         tearDown();
     }
 
